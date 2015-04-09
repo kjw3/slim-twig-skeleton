@@ -1,0 +1,10 @@
+/logs/*.log
+/.buildpath
+/.project
+/.settings
+/*.sublime*
+.DS_Store
+/archive
+/templates/cache
+/vendor
+/composer.phar

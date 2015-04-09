@@ -1,0 +1,31 @@
+{
+	"name": "sgt/lites/contractportfolio",
+	"description": "PHP Skelton including Composer, Slim, Twig, PHPUnit, JQuery, Bootstrap and Monolog",
+	"version": "0.1",
+	"type": "web application",
+	"keywords": ["application", "portfolio", "php", "sgt"],
+	"homepage": "https://github.com/SGT-LaRC/slim-twig-skeleton",
+	"time": "2015-04-09",
+	"authors": [
+		{"name": "Kevin Jones","email": "kjones@sgt-inc.com","role": "Solutions Architect"}
+	],
+	"support": {
+		"email": "kjones@sgt-inc.com",
+		"issues": "https://github.com/SGT-LaRC/slim-twig-skeleton/issues",
+		"source": "https://github.com/SGT-LaRC/slim-twig-skeleton"
+	},
+	"require": {
+		"php": ">=5.3.10",
+		"monolog/monolog": "1.*",
+		"phpunit/phpunit": "4.1.*",
+		"slim/slim": "2.*",
+		"slim/views": "0.1.*",
+		"twig/twig": "1.*"
+	},
+	"autoload": {
+		"psr-0": {
+			"Imavex": "src/",
+			"com\\sgtinc\\": "src/"
+		}
+	}
+}
