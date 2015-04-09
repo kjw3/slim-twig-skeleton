@@ -7,13 +7,13 @@ class LdapServiceTest extends \PHPUnit_Framework_TestCase {
 	public function testFindByEmailSuccess() {
 
 		//Check that given a valid auid, ldap does return a user
-		$email = 'kevin.d.jones@nasa.gov';
+		$email = 'your email here';
 		$ldapRecords = \com\sgtinc\LdapService::findByEmail($email);
 
 		$this -> assertGreaterThanOrEqual(1, count($ldapRecords));
 
 		//Check that given a valid auid, ldap does return the requested user
-		$this -> assertEquals('kevin.d.jones@nasa.gov', $ldapRecords[0]->__get('nasaPrimaryEmail'));
+		$this -> assertEquals($email, $ldapRecords[0]->__get('nasaPrimaryEmail'));
 	}
 
 	public function testFindByEmailFailure() {
@@ -28,13 +28,13 @@ class LdapServiceTest extends \PHPUnit_Framework_TestCase {
 	public function testFindByAuidSuccess() {
 
 		//Check that given a valid auid, ldap does return a user
-		$auid = 'kdjones1';
+		$auid = 'your auid here';
 		$ldapRecords = \com\sgtinc\LdapService::findByAuid($auid);
 
 		$this -> assertEquals(1, count($ldapRecords));
 
 		//Check that given a valid auid, ldap does return the requested user
-		$this -> assertEquals('kdjones1', $ldapRecords[0]->__get('agencyUid'));
+		$this -> assertEquals($auid, $ldapRecords[0]->__get('agencyUid'));
 	}
 
 	public function testFindByAuidFailure() {
@@ -49,8 +49,8 @@ class LdapServiceTest extends \PHPUnit_Framework_TestCase {
 	public function testFindByLookupSuccess() {
 
 		//Check that given a valid search, ldap does return a user
-		$centerAcronym = "LARC";
-		$query = 'Jones';
+		$centerAcronym = "organization acronym here";
+		$query = 'Search keywords here';
 		$ldapRecords = \com\sgtinc\LdapService::findByLookup($query,$centerAcronym);
 
 		$this -> assertGreaterThanOrEqual(1, count($ldapRecords));
@@ -59,7 +59,7 @@ class LdapServiceTest extends \PHPUnit_Framework_TestCase {
 	public function testFindByLookupFailure() {
 
 		//Check that given an invalid search, ldap doesn't return a user
-		$centerAcronym = "LARC";
+		$centerAcronym = "organization acronym here";
 		$query = 'Im not a valid user';
 		$ldapRecords = \com\sgtinc\LdapService::findByLookup($query,$centerAcronym);
 
